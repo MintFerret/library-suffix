@@ -79,6 +79,12 @@ const char *Q_PlatformStringByID( const int platform )
 		return "hurd";
 	case PLATFORM_PSP:
 		return "psp";
+	case PLATFORM_OGC:
+	#if defined( HW_RVL )
+		return "wii";
+	#elif defined( HW_DOL )
+		return "gamecube";
+	#endif
 	}
 
 	return "unknown";
